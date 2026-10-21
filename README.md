@@ -38,7 +38,7 @@ Cada afirmación lleva una marca:
 Además:
 
 - [Bibliografía verificada](bibliografia.md) con enlaces oficiales y fecha de consulta.
-- [Ejemplo ficticio](ejemplos/) de CV en dos versiones (mala y buena) para la demostración del módulo 2.
+- [Ejemplo ficticio](https://github.com/exposito43/taller-cv-ats/tree/main/ejemplos) de CV en dos versiones (mala y buena) para la demostración del módulo 2.
 - [Herramienta](herramientas/comprobar_cv.py) en Python para comprobar un PDF: texto extraíble, orden de lectura, etiquetas e idioma.
 - [Guía para el ponente](guia-ponente.md): preparación, tiempos y preguntas frecuentes.
 

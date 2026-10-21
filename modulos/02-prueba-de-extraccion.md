@@ -8,7 +8,7 @@ Ver con los propios ojos cómo se transforma un CV en texto plano, que es lo que
 
 ## Material
 
-En la carpeta [`ejemplos/`](../ejemplos/) hay el **mismo candidato ficticio** en dos versiones:
+En la carpeta [`ejemplos/`](https://github.com/exposito43/taller-cv-ats/tree/main/ejemplos) hay el **mismo candidato ficticio** en dos versiones:
 
 | Archivo | Diseño |
 |---|---|

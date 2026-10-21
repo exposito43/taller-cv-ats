@@ -5,7 +5,7 @@
 ## Preparación (30 min antes)
 
 - [ ] Proyector y un portátil con Python 3 y `pip install pypdf`.
-- [ ] Abrir en pestañas los dos PDF de [`ejemplos/`](ejemplos/) y el Bloc de notas.
+- [ ] Abrir en pestañas los dos PDF de [`ejemplos/`](https://github.com/exposito43/taller-cv-ats/tree/main/ejemplos) y el Bloc de notas.
 - [ ] Probar `python herramientas/comprobar_cv.py ejemplos/cv_ficticio_mal.pdf`.
 - [ ] Una oferta de empleo real del sector, impresa o en pantalla (módulo 4).
 - [ ] Pedir a los asistentes que traigan su CV en PDF y una oferta que les interese.
