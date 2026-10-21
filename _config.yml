@@ -1,0 +1,8 @@
+title: "Taller: CV para filtros ATS en el sector IT"
+description: "Material abierto, con bibliografía verificada, para preparar un CV que se lea bien y se pueda defender."
+lang: es
+theme: jekyll-theme-minimal
+exclude:
+  - diagramas
+  - publicacion
+  - herramientas/__pycache__
