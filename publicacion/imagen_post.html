@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Imagen del post - Taller CV para filtros ATS</title>
+<style>
+:root { --navy:#0b1f3a; --navy2:#12305a; --verde:#3ddc84; --verde2:#1fae63; --rojo:#ff5c6c; --texto:#eaf1fb; --gris:#9fb3cc; --claro:#f4f8fc; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 1200px; }
+body { font-family: "Segoe UI", Arial, Helvetica, sans-serif; background: var(--navy); color: var(--texto); overflow: hidden; }
+.lienzo { width: 1200px; height: 1200px; padding: 52px 56px 40px; display: flex; flex-direction: column;
+  background: radial-gradient(circle at 92% 6%, #1d4f8a 0, transparent 38%), radial-gradient(circle at 0% 100%, #0f3b33 0, transparent 40%), var(--navy); }
+.etiquetas { display: flex; gap: 12px; margin-bottom: 22px; }
+.chip { font-size: 21px; font-weight: 700; padding: 8px 18px; border-radius: 999px; }
+.chip.g { background: var(--verde); color: #062a17; }
+.chip.o { border: 2px solid var(--gris); color: var(--texto); }
+h1 { font-size: 66px; line-height: 1.04; font-weight: 800; letter-spacing: -1px; }
+h1 span { color: var(--verde); }
+.sub { font-size: 27px; color: var(--gris); margin: 16px 0 30px; line-height: 1.35; }
+.sub b { color: var(--texto); }
+.fila { display: flex; gap: 26px; }
+.caja { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: 20px; padding: 24px 26px; }
+.demo { flex: 1.05; }
+.demo h2, .mods h2 { font-size: 24px; color: var(--verde); margin-bottom: 14px; text-transform: uppercase; letter-spacing: .5px; }
+.cvs { display: flex; gap: 16px; }
+.cv { flex: 1; border-radius: 14px; padding: 16px; }
+.cv.mal { background: rgba(255,92,108,.12); border: 2px solid var(--rojo); }
+.cv.bien { background: rgba(61,220,132,.12); border: 2px solid var(--verde); }
+.cv .t { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+.cv .n { font-size: 54px; font-weight: 800; line-height: 1; }
+.cv.mal .n { color: var(--rojo); } .cv.bien .n { color: var(--verde); }
+.cv .u { font-size: 17px; color: var(--gris); margin: 4px 0 10px; }
+.cv ul { list-style: none; font-size: 17px; line-height: 1.45; }
+.nota { font-size: 15px; color: var(--gris); margin-top: 12px; line-height: 1.35; }
+.mods { flex: .95; }
+.mods ol { list-style: none; counter-reset: m; }
+.mods li { counter-increment: m; font-size: 20px; line-height: 1.3; padding: 8px 0 8px 46px; position: relative; border-bottom: 1px solid rgba(255,255,255,.08); }
+.mods li:last-child { border-bottom: 0; }
+.mods li::before { content: counter(m); position: absolute; left: 0; top: 6px; width: 32px; height: 32px; border-radius: 50%; background: var(--verde); color: #062a17; font-weight: 800; font-size: 18px; display: flex; align-items: center; justify-content: center; }
+.evid { margin-top: 26px; display: flex; gap: 26px; align-items: stretch; }
+.niveles { flex: 1.05; }
+.niveles .l { display: flex; gap: 14px; align-items: center; font-size: 19px; margin: 7px 0; }
+.niveles .k { min-width: 46px; text-align: center; font-weight: 800; border-radius: 8px; padding: 3px 0; }
+.k.e { background: var(--verde); color: #062a17; } .k.p { background: #ffd166; color: #3a2a00; } .k.h { background: var(--rojo); color: #3a0008; }
+.fuentes { flex: .95; font-size: 18px; line-height: 1.45; }
+.fuentes b { color: var(--verde); font-size: 20px; display: block; margin-bottom: 6px; text-transform: uppercase; }
+.pie { margin-top: auto; display: flex; align-items: center; justify-content: space-between; background: var(--claro); color: var(--navy); border-radius: 22px; padding: 22px 30px; }
+.pie .url { font-size: 34px; font-weight: 800; color: var(--navy); }
+.pie .url small { display: block; font-size: 19px; font-weight: 600; color: #3c5778; margin-bottom: 4px; }
+.pie .der { text-align: right; font-size: 18px; line-height: 1.4; color: #3c5778; }
+.pie .der b { color: var(--verde2); font-size: 22px; }
+</style>
+</head>
+<body>
+<div class="lienzo">
+  <div class="etiquetas"><span class="chip g">TALLER GRATUITO</span><span class="chip o">Proyecto JOB · actualización</span><span class="chip o">90 min</span></div>
+  <h1>Cómo hacer un CV que los<br><span>filtros ATS</span> lean bien</h1>
+  <p class="sub">Material abierto en GitHub, con <b>bibliografía verificada</b> y cada afirmación marcada con su nivel de evidencia. <b>Sin mitos y sin promesas.</b></p>
+
+  <div class="fila">
+    <div class="caja demo">
+      <h2>Demostración del taller</h2>
+      <div class="cvs">
+        <div class="cv mal"><div class="t">✗ CV mal diseñado</div><div class="n">99</div><div class="u">palabras extraíbles</div>
+          <ul><li>Dos columnas</li><li>Barras y estrellas</li><li>«Mi viaje» en vez de «Experiencia»</li><li>Fechas solo con años</li></ul></div>
+        <div class="cv bien"><div class="t">✓ CV bien diseñado</div><div class="n">297</div><div class="u">palabras extraíbles</div>
+          <ul><li>Una columna</li><li>Encabezados estándar</li><li>Fechas «Mes Año»</li><li>PDF etiquetado</li></ul></div>
+      </div>
+      <p class="nota">Mismo candidato <b>ficticio</b> y misma información de partida, medido con la herramienta en Python del taller.</p>
+    </div>
+    <div class="caja mods">
+      <h2>7 módulos</h2>
+      <ol>
+        <li>Cómo lee un CV un ATS: mitos y realidad</li>
+        <li>Lo que «ve» la máquina (demo)</li>
+        <li>Formato: columna única y PDF etiquetado</li>
+        <li>Palabras clave y logros con verbos honestos</li>
+        <li>Ética: lo que no se debe hacer</li>
+        <li>Checklist puntuado + herramienta</li>
+        <li>LinkedIn y portales: datos coherentes</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="evid">
+    <div class="caja niveles">
+      <div class="l"><span class="k e">E</span>Estándar o documentación oficial</div>
+      <div class="l"><span class="k p">P</span>Práctica o testimonio, sin datos que lo prueben</div>
+      <div class="l"><span class="k h">H</span>Sin confirmar: no se enseña como cierto</div>
+    </div>
+    <div class="caja fuentes"><b>Algunas fuentes</b>ISO 32000-2 · ISO 14289-1 (PDF/UA)<br>W3C WCAG 2.2 · Guía de Workday<br>Ayuda de Greenhouse · Apache Tika</div>
+  </div>
+
+  <div class="pie" style="margin-top:26px">
+    <div class="url"><small>Accede gratis al taller:</small>exposito43.github.io/taller-cv-ats</div>
+    <div class="der"><b>Libre · CC BY 4.0</b><br>Úsalo, impártelo o mejóralo<br>Yulieser Expósito Herrera</div>
+  </div>
+</div>
+</body>
+</html>

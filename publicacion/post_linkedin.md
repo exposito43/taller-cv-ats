@@ -23,4 +23,4 @@ Es libre (CC BY 4.0): puedes usarlo, impartirlo o mejorarlo.
 
 Si ves algún error o tienes una fuente mejor, abre una issue en el repositorio o déjala en comentarios.
 
-#EmpleoIT #ATS #Currículum #SoporteIT #Python #Automatización
+#EmpleoMadrid #ComunidadDeMadrid #TrabajoEnMadrid #OfertasDeEmpleo #BuscoEmpleo #EmpleoIT #ATS #Currículum #CV #RRHH #SoporteIT #Python #IA #Automatización #OpenSource
