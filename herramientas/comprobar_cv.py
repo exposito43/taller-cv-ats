@@ -1,4 +1,4 @@
-"""Comprueba un CV en PDF: texto extraíble, orden de secciones, etiquetado PDF e idioma.
+"""Comprueba un CV en PDF: texto extraíble, secciones estándar, etiquetado PDF, idioma, fechas y páginas.
 
 Uso:  python herramientas/comprobar_cv.py mi_cv.pdf
 Requiere: pip install pypdf
@@ -16,17 +16,19 @@ def comprobar(ruta):
     r = PdfReader(ruta)
     texto = "\n".join(p.extract_text() or "" for p in r.pages)
     bajo = texto.lower()
+    palabras = len(texto.split())
+    paginas = len(r.pages)
     raiz = r.trailer["/Root"]
     etiquetado = "/StructTreeRoot" in raiz and bool(raiz.get("/MarkInfo", {}).get("/Marked", False))
-    idioma = str(raiz.get("/Lang", "")) or "(no declarado)"
-    posiciones = {s: bajo.find(s) for s in SECCIONES}
+    idioma = str(raiz.get("/Lang", ""))
+    presentes = {s: s in bajo for s in SECCIONES}
     resultados = [
-        ("Texto extraíble", len(texto.split()) > 50, f"{len(texto.split())} palabras"),
+        ("Texto extraíble", palabras > 50, f"{palabras} palabras"),
         ("PDF etiquetado", etiquetado, "árbol de estructura y /MarkInfo" if etiquetado else "sin árbol de estructura"),
-        ("Idioma declarado", idioma != "(no declarado)", idioma),
-        ("Secciones estándar", all(v >= 0 for v in posiciones.values()), ", ".join(f"{k}: {'sí' if v >= 0 else 'no'}" for k, v in posiciones.items())),
+        ("Idioma declarado", bool(idioma), idioma or "(no declarado)"),
+        ("Secciones estándar", all(presentes.values()), ", ".join(f"{k}: {'sí' if v else 'no'}" for k, v in presentes.items())),
         ("Fechas «Mes Año»", bool(re.search(r"\b(ene|feb|mar|abr|may|jun|jul|ago|sep|oct|nov|dic)[a-z]*\.? \d{4}", bajo)), "busca p. ej. «Sep 2024»"),
-        ("Páginas", len(r.pages) <= 2, f"{len(r.pages)}"),
+        ("Páginas", paginas <= 2, f"{paginas}"),
     ]
     print(f"\nArchivo: {ruta}")
     for nombre, ok, detalle in resultados:

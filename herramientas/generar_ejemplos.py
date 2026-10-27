@@ -9,11 +9,12 @@ from pathlib import Path
 EDGE = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 EJ = Path(__file__).resolve().parent.parent / "ejemplos"
 
-for nombre, etiquetado in (("cv_ficticio_bien", True), ("cv_ficticio_mal", False)):
-    perfil = tempfile.mkdtemp(prefix="edge_taller_")
-    cmd = [EDGE, f"--user-data-dir={perfil}", "--no-first-run", "--headless=new", "--disable-gpu", "--no-pdf-header-footer",
-           f"--print-to-pdf={EJ / (nombre + '.pdf')}", (EJ / (nombre + ".html")).as_uri()]
-    if etiquetado:
-        cmd.insert(-1, "--export-tagged-pdf")
-    subprocess.run(cmd, check=True, timeout=90, capture_output=True)
-    print(EJ / (nombre + ".pdf"))
+# Perfil temporal propio: si Edge ya está abierto con el perfil del usuario, la orden headless no imprime nada.
+with tempfile.TemporaryDirectory(prefix="edge_taller_", ignore_cleanup_errors=True) as perfil:
+    for nombre, etiquetado in (("cv_ficticio_bien", True), ("cv_ficticio_mal", False)):
+        pdf = EJ / f"{nombre}.pdf"
+        cmd = [EDGE, f"--user-data-dir={perfil}", "--no-first-run", "--headless=new", "--disable-gpu",
+               "--no-pdf-header-footer", f"--print-to-pdf={pdf}"]
+        cmd += ["--export-tagged-pdf"] if etiquetado else []
+        subprocess.run(cmd + [(EJ / f"{nombre}.html").as_uri()], check=True, timeout=90, capture_output=True)
+        print(pdf)
